@@ -19,7 +19,7 @@ def seleceKeyById(keyId):
     # connection.commit()
     rows = cursor.fetchall()
     if rows:
-        print("随机查询到的 appkey" + rows[0].get("appkey"))
+        # print("随机查询到的 appkey" + rows[0].get("appkey"))
         return rows[0].get("appkey")
     else:
         return 1

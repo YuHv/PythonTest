@@ -18,6 +18,7 @@
         <list>
           <option value="N806" />
           <option value="N802" />
+          <option value="N803" />
         </list>
       </option>
     </inspection_tool>
@@ -38,6 +39,7 @@
           <option value="Key_Demo_Token" />
           <option value="App_and_Key_Service" />
           <option value="testUser" />
+          <option value="SelectTime" />
         </list>
       </option>
     </inspection_tool>
