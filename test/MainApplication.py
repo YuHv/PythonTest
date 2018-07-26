@@ -13,13 +13,17 @@ import SelectTime as selTime
 
 phone = fake.phone_number()
 email = fake.email()
-# phone = '13438160279'
-# password = "123456q"
 
 password = ''
 for i in range(numpy.random.randint(8, 16)):
     password += random.choice(string.digits + string.ascii_letters)
+
+
 sum = 10
+
+
+# phone = '17828019328'
+# password = "123456q"
 
 if __name__ == '__main__':
 

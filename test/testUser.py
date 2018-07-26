@@ -36,7 +36,7 @@ def AddUser(phone, email, password):
 
     if choise < 11:
         # 上传营业执照
-        files = {"license": open(r"F:\testPhoto.png", 'rb').read()}
+        files = {"license": open(r"F:\norecord.png", 'rb').read()}
         param = {"userId": user_id}
         r_upLoad = requests.post(url + "/upload", data=param, files=files)
         data = r_upLoad.json()
