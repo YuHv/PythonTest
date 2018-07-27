@@ -22,6 +22,6 @@ def get_access_token(username, password):
     # 获取登录Token
     r_loginToken = requests.post(url, headers=headers, params=param)
     data = r_loginToken.json()
-    print("获取登录Token---------------------------------------------------")
+    print("------------------------------获取登录Token------------------------------")
     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
     return data.get("access_token")

@@ -20,5 +20,5 @@ def selectTime(access_token):
 
     r_selectTime = requests.get(url, headers=headers, params=param)
     data = r_selectTime.json()
-    print("------------------------查询时间凭证-----------------------------")
+    print("------------------------------查询时间凭证------------------------------")
     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))

@@ -16,19 +16,19 @@ def app_And_key(sum, access_token):
         if addApp_c == 1:
             # 创建新应用
             data = app.addApp(access_token)
-            print("创建新应用接口----------------------------------------------------------------")
+            print("------------------------------创建新应用接口------------------------------")
             print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
             appId = data.get("data").get("appId")
 
             if updateApp_c == 1:
                 # 更新应用
                 data = app.updateApp(appId, access_token)
-                print("更新应用接口----------------------------------------------------------------")
+                print("------------------------------更新应用接口------------------------------")
                 print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
             if updateApp_c == 2:
                 # 删除应用
                 data = app.deleteApp(appId, access_token)
-                print("删除应用接口----------------------------------------------------------------")
+                print("------------------------------删除应用接口------------------------------")
                 print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
             else:
                 print()
@@ -36,7 +36,7 @@ def app_And_key(sum, access_token):
             if addKey_c == 1:
                 # 创建新Key
                 data = app.addKey(appId, access_token)
-                print("创建新key接口----------------------------------------------------------------")
+                print("------------------------------创建新key接口------------------------------")
                 print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
                 appkey = data.get("data").get("appkey")
                 keyDome.Token(appkey, access_token)
@@ -45,26 +45,26 @@ def app_And_key(sum, access_token):
                 if updateKey_c == 1:
                     # 编辑key
                     data = app.updateKey(keyId, access_token)
-                    print("编辑key接口----------------------------------------------------------------")
+                    print("------------------------------编辑key接口------------------------------")
                     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
                 elif updateKey_c == 2:
                     # 重置key
                     data = app.refresh(keyId, access_token)
-                    print("重置key接口----------------------------------------------------------------")
+                    print("------------------------------重置key接口------------------------------")
                     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
                     appkey = data.get("data").get("appkey")
                     keyDome.Token(appkey, access_token)
                 elif updateKey_c == 3:
                     # 删除key
                     data = app.deleteKey(keyId, access_token)
-                    print("删除key接口----------------------------------------------------------------")
+                    print("------------------------------删除key接口------------------------------")
                     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
                 else:
                     print()
 
     # 获取应用列表
     data = app.listApp(access_token)
-    print("获取应用列表接口--------------------------------------------------------------")
+    print("------------------------------获取应用列表接口------------------------------")
     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
         #
         #

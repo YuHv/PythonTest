@@ -1,6 +1,5 @@
 import numpy
-import Select_Key_Random as selKey
-import Key_Demo_Token as keyDome
+
 import App_and_Key_Service as testApp
 import testUser as addUser
 import Login_Token as loginToken
@@ -10,10 +9,11 @@ import string
 import random
 import SelectTime as selTime
 
-
+"""随机生成电话号码和邮箱"""
 phone = fake.phone_number()
 email = fake.email()
 
+"""随机生成8到16位的密码"""
 password = ''
 for i in range(numpy.random.randint(8, 16)):
     password += random.choice(string.digits + string.ascii_letters)
@@ -27,15 +27,21 @@ sum = 10
 
 if __name__ == '__main__':
 
+    # 注册用户
     addUser.AddUser(phone, email, password)
+
+    # 获取登录token
     username = phone
     access_token = 'Bearer' + loginToken.get_access_token(username, password)
+
+    # 对APP、AppKey操作
     testApp.app_And_key(sum, access_token)
-    #
+    '''#
     # for i in range(1):
     #     radAppId = numpy.random.randint(1, sum)
     #     appkey = selKey.seleceKeyById(129)
     #     if appkey != 1:
-    #         keyDome.Token(appkey, access_token)
+    #         keyDome.Token(appkey, access_token)'''
 
+    # 查询时间凭证
     selTime.selectTime(access_token)
