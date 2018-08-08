@@ -40,6 +40,7 @@
           <option value="App_and_Key_Service" />
           <option value="testUser" />
           <option value="SelectTime" />
+          <option value="UserInfo" />
         </list>
       </option>
     </inspection_tool>

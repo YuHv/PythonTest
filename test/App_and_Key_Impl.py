@@ -2,21 +2,11 @@ import json
 import requests
 import random
 import numpy
-import Login_Token as loginToken
 from faker import Factory
 
 fake = Factory().create('zh_CN')
 
-#
-# access_token = 'Bearer'+loginToken.get_access_token()
-# url = "http://10.25.127.116:8788/app"
-url = "http://10.25.128.26:9999/front/app/app"
-
-
-# headers = {'Content-Type': 'application/json', 'Authorization': access_token}
-# headers1 = {'Authorization': access_token}
-# headers2 = {'Content-Type': 'multipart/form-data'}
-# headers3 = {'Content-Type': 'application/json'}
+url = "http://10.25.128.26/app"
 
 
 def choice_gen():
@@ -101,26 +91,26 @@ def updateKey(keyId, access_token):
     return data
 
 
-def refresh(keyId, access_token):
+def refresh(keyId, access_token, email_code):
     headers = {'Content-Type': 'application/json', 'Authorization': access_token}
-    param = {"keyId": keyId}
+    param = {"keyId": keyId, "validateCode": email_code}
     r_refresh_key = requests.put(url + "/key/refresh", headers=headers, params=param)
     data = r_refresh_key.json()
     return data
 
 
-def deleteKey(keyId, access_token):
+def deleteKey(keyId, access_token, email_code):
     headers1 = {'Authorization': access_token}
 
-    param = {"keyId": keyId}
+    param = {"keyId": keyId, "validateCode": email_code}
     r_delete_key = requests.delete(url + "/key", headers=headers1, params=param)
     data = r_delete_key.json()
     return data
 
 
-def deleteApp(appId, access_token):
+def deleteApp(appId, access_token, email_code):
     headers1 = {'Authorization': access_token}
-    param = {"appId":appId}
+    param = {"appId": appId, "validateCode": email_code}
     r_delete_app = requests.delete(url, headers=headers1, params=param)
     data = r_delete_app.json()
     return data

@@ -2,15 +2,12 @@ import json
 
 import requests
 
-url = "http://10.25.128.26/time/timelicense"
+url = "http://10.25.128.26/timelicense"
 
 
 def selectTime(access_token):
-    # if __name__ == '__main__':
-    # print(access_token)
-    # access_token = "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaWNlbnNlIjoibWFkZSBieSB0dGFzIiwidXNlcl9uYW1lIjoiMTM0MzgxNjAyNzkkMSIsInNjb3BlIjpbInNlcnZlciJdLCJleHAiOjE1MzIxMDc3NDAsImF1dGhvcml0aWVzIjpbImZyb250dXNlciIsIlJPTEVfVVNFUiJdLCJqdGkiOiI0Y2FkYmY2Yi0wZjE2LTQwNmQtOGE0Yi1kYTZlYzYzYjcwMGMiLCJjbGllbnRfaWQiOiJwaWcifQ.Xeo7djXfK2wqVndo00L4pR7jY_1q8ZZbqFbNDAIl-DY"
 
-    param = {"page": "1", "limit": "10"}
+    param = {"page": "1", "limit": "20"}
 
     headers = {
         'Authorization': access_token,
@@ -22,3 +19,8 @@ def selectTime(access_token):
     data = r_selectTime.json()
     print("------------------------------查询时间凭证------------------------------")
     print(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
+
+
+ # if __name__ == '__main__':
+    # print(access_token)
+    # access_token = "BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaWNlbnNlIjoibWFkZSBieSB0dGFzIiwidXNlcl9uYW1lIjoiMTM0MzgxNjAyNzkkMSIsInNjb3BlIjpbInNlcnZlciJdLCJleHAiOjE1MzIxMDc3NDAsImF1dGhvcml0aWVzIjpbImZyb250dXNlciIsIlJPTEVfVVNFUiJdLCJqdGkiOiI0Y2FkYmY2Yi0wZjE2LTQwNmQtOGE0Yi1kYTZlYzYzYjcwMGMiLCJjbGllbnRfaWQiOiJwaWcifQ.Xeo7djXfK2wqVndo00L4pR7jY_1q8ZZbqFbNDAIl-DY"
